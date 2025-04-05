@@ -11,6 +11,7 @@ class Conexion {
                 PDO::ATTR_PERSISTENT => true
             );
             $this->conexion = new PDO($dsn, DB_USER, DB_PASSWORD);
+            echo "existo";
             return $this->conexion;
         } catch (PDOException $e) {
             echo $e->getMessage();

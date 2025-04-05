@@ -10,7 +10,7 @@ class login {
     public function login($email, $password)
     {
         $this->_db->conectar();
-        $r = $this->_db->conexion->prepare("SELECT * FROM usuarios WHERE email = :email AND password = :password");
+        $r = $this->_db->conexion->prepare("SELECT * FROM usuarios WHERE email = '".$email."' AND password = '".$password."'");
         $r->execute();
         $this->_db->desconectar();
         if ($r->fetch(PDO::FETCH_OBJ)) {
